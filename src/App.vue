@@ -1,9 +1,10 @@
 <script>
 import ColorPickerGame from "./components/ColorPickerGame.vue";
 import Recap_01_02_2023 from "./components/Recap_01_02_2023.vue";
+import Composable from "./composables/Composable.vue";
 
 export default {
-  components: { ColorPickerGame, Recap_01_02_2023 },
+  components: { Composable, ColorPickerGame, Recap_01_02_2023 },
   data() {
     return {
       currentLesson: "color-picker-game",
@@ -13,8 +14,11 @@ export default {
 </script>
 
 <template>
-  <ColorPickerGame v-if="currentLesson === 'color-picker-game'" />
-  <Recap_01_02_2023 v-else />
+  <div>
+    <Composable/>
+    <ColorPickerGame v-if="currentLesson === 'color-picker-game'" />
+    <Recap_01_02_2023 v-else />
+  </div>
 </template>
 
 <style scoped></style>
